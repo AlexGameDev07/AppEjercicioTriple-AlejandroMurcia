@@ -13,6 +13,15 @@
         android:theme="@style/Theme.AppEjerciciosDeClaseAlejandroMurcia"
         tools:targetApi="31">
         <activity
+            android:name=".activity_third_exercise"
+            android:exported="false" />
+        <activity
+            android:name=".activity_second_exercise"
+            android:exported="false" />
+        <activity
+            android:name=".activity_first_exercise"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
