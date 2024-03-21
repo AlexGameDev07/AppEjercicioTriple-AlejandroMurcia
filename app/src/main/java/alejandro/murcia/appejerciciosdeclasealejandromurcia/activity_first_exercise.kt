@@ -1,6 +1,9 @@
 package alejandro.murcia.appejerciciosdeclasealejandromurcia
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +19,17 @@ class activity_first_exercise : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val txtFechaNacimiento = findViewById<EditText>(R.id.txtFechaNacimiento)
+        val btnCalcular = findViewById<Button>(R.id.btnCalcularEdad)
+        val lbEdad = findViewById<TextView>(R.id.lbEdad)
+
+        btnCalcular.setOnClickListener {
+            val objEdad = Edad()
+            val edad = objEdad.CalcularEdad(txtFechaNacimiento.text.toString().toInt())
+            lbEdad.text = "Tu edad es: $edad años"
+        }
+
+
     }
 }
