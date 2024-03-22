@@ -20,9 +20,9 @@ class activity_second_exercise : AppCompatActivity() {
             insets
         }
 
-        val txtBase = findViewById<EditText>(R.id.txtBase)
+        val txtBase = findViewById<EditText>(R.id.txtNum)
         val txtAltura = findViewById<EditText>(R.id.txtAltura)
-        val btnCalArea = findViewById<Button>(R.id.btnCalcularArea)
+        val btnCalArea = findViewById<Button>(R.id.btnComprobar)
         val lbArea = findViewById<TextView>(R.id.lbÁrea)
 
         val objArea = Area()

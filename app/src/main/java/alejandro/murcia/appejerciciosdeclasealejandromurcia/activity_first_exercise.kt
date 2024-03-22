@@ -20,8 +20,8 @@ class activity_first_exercise : AppCompatActivity() {
             insets
         }
 
-        val txtFechaNacimiento = findViewById<EditText>(R.id.txtBase)
-        val btnCalcular = findViewById<Button>(R.id.btnCalcularArea)
+        val txtFechaNacimiento = findViewById<EditText>(R.id.txtNum)
+        val btnCalcular = findViewById<Button>(R.id.btnComprobar)
         val lbEdad = findViewById<TextView>(R.id.lbEdad)
 
         btnCalcular.setOnClickListener {
