@@ -21,7 +21,7 @@ class activity_first_exercise : AppCompatActivity() {
         }
 
         val txtFechaNacimiento = findViewById<EditText>(R.id.txtBase)
-        val btnCalcular = findViewById<Button>(R.id.btnCalcularEdad)
+        val btnCalcular = findViewById<Button>(R.id.btnCalcularArea)
         val lbEdad = findViewById<TextView>(R.id.lbEdad)
 
         btnCalcular.setOnClickListener {

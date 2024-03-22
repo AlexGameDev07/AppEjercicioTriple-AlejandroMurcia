@@ -19,13 +19,13 @@
         app:layout_constraintVertical_bias="0.042" />
 
     <Button
-        android:id="@+id/btnCalcularEdad"
+        android:id="@+id/btnCalcularArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="138dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="138dp"
-        android:text="Calcular edad"
+        android:text="Calcular Área"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -66,8 +66,12 @@
         android:ems="10"
         android:hint="Ingresa la altura  "
         android:inputType="text"
-        tools:layout_editor_absoluteX="72dp"
-        tools:layout_editor_absoluteY="330dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
 
     <TextView
         android:id="@+id/lbÁrea"
