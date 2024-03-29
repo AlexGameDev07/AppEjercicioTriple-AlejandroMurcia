@@ -13,6 +13,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+import android.content.Context
+import android.view.WindowManager
+import androidx.fragment.app.Fragment
+
 class activity_second_exercise : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +29,24 @@ class activity_second_exercise : AppCompatActivity() {
             insets
         }
 
+/***-Helpers-***********************************************************************************/
+        //The following methods are used for hide the keyboard at the screen
+        fun AppCompatActivity.hideKeyboard() {
+            val view = this.currentFocus
+            if (view != null) {
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(view.windowToken, 0)
+            }
+            window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
+        }
+
+        fun Fragment.hideKeyboard() {
+            val activity = this.activity
+            if (activity is AppCompatActivity) {
+                activity.hideKeyboard()
+            }
+        }
+/***-Main_Code-********************************************************************************/
         val txtBase = findViewById<EditText>(R.id.txtNum)
         val txtAltura = findViewById<EditText>(R.id.txtAltura)
         val btnCalArea = findViewById<Button>(R.id.btnComprobar)
@@ -34,18 +56,21 @@ class activity_second_exercise : AppCompatActivity() {
         btnCalArea.setOnClickListener {
 
             try {
-                if(txtBase.text.isNotEmpty() == true && txtAltura.text.isNotEmpty()) {
+                hideKeyboard()
+                if (txtBase.text.isNotEmpty() == true && txtAltura.text.isNotEmpty()) {
                     val Area = objArea.CalcularArea(
                         txtBase.text.toString().toDouble(),
                         txtAltura.text.toString().toDouble()
                     )
                     lbArea.text = "El área de su triángulo es: $Area"
+                } else {
+                    Toast.makeText(
+                        this@activity_second_exercise,
+                        "Campos vacíos",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
-                else{
-                    Toast.makeText(this@activity_second_exercise, "Campos vacíos", Toast.LENGTH_SHORT).show()
-                }
-            }
-            catch (ex: Exception){
+            } catch (ex: Exception) {
                 Toast.makeText(this@activity_second_exercise, ex.message, Toast.LENGTH_SHORT).show()
 
             }
